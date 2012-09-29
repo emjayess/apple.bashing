@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/head/master" ]; then
+# -> http://areyoufuckingcoding.me/2012/09/28/paranoid-git-workflow/
+
+if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ]; then
   echo "sorry, no committing directly to master"
   echo
   echo "instead; do the work in a topic branch and then fast-forward merge your changes to master"
@@ -14,7 +16,7 @@ if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/head/master" ]; then
   echo "  git checkout master"
   echo "  git merge topic_abc"
   echo 
-  echo "don't get mad - discipline in engineering leads to great software"
+  echo "don't get mad - discipline in engineering leads to great software! teehee."
 
   exit 1
 fi
