@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/head/master" ]; then
+  echo "sorry, no committing directly to master"
+  echo
+  echo "instead; do the work in a topic branch and then fast-forward merge your changes to master"
+  echo
+  echo "  git checkout -b topic_abc"
+  echo " ... bunch of edits, commits"
+  echo
+  echo "remember! before merging to master, send a pull request; merge only after code review and approval"
+  echo
+  echo "  git pull origin master && git rebase master"
+  echo "  git checkout master"
+  echo "  git merge topic_abc"
+  echo 
+  echo "don't get mad - discipline in engineering leads to great software"
+
+  exit 1
+fi
