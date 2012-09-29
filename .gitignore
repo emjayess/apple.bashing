@@ -1,0 +1,4 @@
+# Ignore sublime text stuff
+*.sublime-projectcompletions
+*.sublime-project
+*.sublime-workspace
