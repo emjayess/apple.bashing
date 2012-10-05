@@ -19,3 +19,6 @@ alias flushdns='dscacheutil -flushcache'
 alias flushdnsmasq='launchctl stop homebrew.mxcl.dnsmasq && launchctl start homebrew.mxcl.dnsmasq'
 
 alias flushfpm='launchctl stop homebrew-php.josegonzalez.php54 && launchctl start homebrew-php.josegonzalez.php54'
+
+# Copies the contents of the id_rsa.pub file to your clipboard
+alias copykey='pbcopy < ~/.ssh/id_rsa.pub'
