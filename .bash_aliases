@@ -34,7 +34,7 @@ alias copykey='pbcopy < ~/.ssh/id_rsa.pub'
 
 # test OCSP stapling
 # see also: https://gist.github.com/4116283
-#alias stapletest='openssl s_client -connect reload.gunup.com:443 -tls1 -tlsextdebug -status'
+#alias stapletest='openssl s_client -connect $1:443 -tls1 -tlsextdebug -status'
 
 # titanium mobile sdk
 alias tit="$HOME/Library/Application\ Support/Titanium/mobilesdk/osx/3.0.0.GA/titanium.py"
