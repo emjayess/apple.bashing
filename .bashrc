@@ -18,6 +18,10 @@ PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
 # X11
 PATH=$PATH:/usr/X11/bin
+# rubygems (brew-managed ruby)
+PATH=$PATH:$BREW_HOME/opt/ruby/bin
+# composer
+PATH=~/.composer/vendor/bin:$PATH
 
 export PATH=$PATH
 

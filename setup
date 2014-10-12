@@ -1,0 +1,37 @@
+# apple.bashing
+
+#mkdir ~/Sources/apple.bashing
+#cd ~/Sources/apple.bashing
+
+######################################
+# .bash_profile
+#
+curl https://raw.github.com/gist/2b392f025f606b488abb/db414b41198afb6b78bdaf0d672e2cf2eb26d78e/.bash_profile > .bash_profile
+
+ln -s ~/Sources/apple.bashing/.bash_profile ~/.bash_profile
+source ~/.bash_profile
+
+######################################
+# .bashrc
+#
+#curl https://raw.github.com/gist/97babe90f3e373abb71b/341b5202df6d35bc422fe579affb934a66455e17/.bashrc >> ~/.bashrc
+curl https://raw.githubusercontent.com/emjayess/apple.bashing/master/.bashrc > ~/.bashrc
+source ~/.bashrc
+
+######################################
+# .profile
+#
+curl https://raw.githubusercontent.com/emjayess/apple.bashing/master/.profile > ~/.profile
+source ~/.profile
+
+######################################
+# .bash_aliases
+#
+curl https://raw.githubusercontent.com/emjayess/apple.bashing/master/.bash_aliases > ~/.bash_aliases
+source ~/.bash_aliases
+
+######################################
+# .bash_brew
+#
+ln -s ~/Sources/apple.bashing/.bash_brew ~/.bash_brew
+source ~/.bash_brew

@@ -36,15 +36,9 @@ alias copykey='pbcopy < ~/.ssh/id_rsa.pub'
 # see also: https://gist.github.com/4116283
 #alias stapletest='openssl s_client -connect $1:443 -tls1 -tlsextdebug -status'
 
-# titanium mobile sdk
-alias tit="$HOME/Library/Application\ Support/Titanium/mobilesdk/osx/3.0.0.GA/titanium.py"
-
 # couchdb
 alias relax='couchdb'
 alias shapeshift='shp2geocouch'
-
-# ievms
-alias ievms='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="9 10" INSTALL_PATH="/Users/emjayess/Boxes/ievms" bash'
 
 # postfix
 #alias maillog=tail -f /var/log/mail.log
@@ -52,3 +46,11 @@ alias ievms='curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEV
 #alias mailqueue=mailq
 #alias mailpurge=postsuper -d ALL
 #alias mailconfig=subl /etc/postfix/main.cf
+
+# compass
+## update: compass formula's been removed from homebrew
+#alias compass='$BREW_HOME/opt/ruby/bin/compass'
+alias compass='/usr/local/Cellar/ruby/2.0.0-p353/bin/compass'
+
+# spoof-mac
+alias cloak='sudo spoof-mac randomize en1 && spoof-mac list --wifi'
