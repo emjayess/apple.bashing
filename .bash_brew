@@ -1,0 +1,2 @@
+export BASH_BREW=~/.bash_brew
+export APPLEBASH=$APPLEBASH:$BASH_BREW

@@ -9,11 +9,14 @@ alias ls='ls -aF'
 alias cls='clear; ls'
 alias hcl='history -c; clear'
 
+alias mem='top -o vsize'
+
 # svn
 alias cowboy='svn'
 alias svnu="clear;svn st -u"
 
 # homebrew
+alias brewcup='brew up && brew cask up'
 alias canhaz='brew install'
 alias canhazlatest='brew update && brew install'
 
@@ -22,8 +25,9 @@ alias flushdns='dscacheutil -flushcache'
 alias flushdnsmasq='launchctl stop homebrew.mxcl.dnsmasq && launchctl start homebrew.mxcl.dnsmasq'
 
 # php fpm
-alias loadfpm='launchctl load ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist'
-alias unloadfpm='launchctl unload ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist'
+#deprecated#alias loadfpm='launchctl load ~/Library/LaunchAgents/homebrew-php.josegonzalez.php55.plist'
+#deprecated#alias unloadfpm='launchctl unload ~/Library/LaunchAgents/homebrew-php.josegonzalez.php55.plist'
+#justuse# brew services [start|stop|restart] php55
 
 # apache solr
 # cd ~/Servers/apache-solr-3.5.0/example
@@ -54,3 +58,8 @@ alias compass='/usr/local/Cellar/ruby/2.0.0-p353/bin/compass'
 
 # spoof-mac
 alias cloak='sudo spoof-mac randomize en1 && spoof-mac list --wifi'
+
+# superdrive noise is irritating
+# (may also require renaming IOCDStorageFamily.kext?)
+alias nosuperdrive='mv /System/Library/Extensions/IODVDStorageFamily.kext /System/Library/Extensions/IODVDStorageFamily.kexta'
+alias superdrive='mv /System/Library/Extensions/IODVDStorageFamily.kexta /System/Library/Extensions/IODVDStorageFamily.kext'
