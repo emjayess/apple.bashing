@@ -1,6 +1,13 @@
 export BASH_ALIASES=~/.bash_aliases
 export APPLEBASH=$APPLEBASH:$BASH_ALIASES
 
+# via https://github.com/janmoesen/tilde/blob/master/.bash/commands
+# Enable simple aliases to be sudo'ed. ("sudone"?)
+# http://www.gnu.org/software/bash/manual/bashref.html#Aliases says: "If the
+# last character of the alias value is a space or tab character, then the next
+# command word following the alias is also checked for alias expansion."
+alias sudo='sudo ';
+
 alias .='pwd'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -10,6 +17,8 @@ alias cls='clear; ls'
 alias hcl='history -c; clear'
 
 alias mem='top -o vsize'
+
+alias ping='ping -c4'
 
 # svn
 alias cowboy='svn'
@@ -61,5 +70,6 @@ alias cloak='sudo spoof-mac randomize en1 && spoof-mac list --wifi'
 
 # superdrive noise is irritating
 # (may also require renaming IOCDStorageFamily.kext?)
+# (may also require '&& sudo touch /System/Library/Extensions/' ??)
 alias nosuperdrive='mv /System/Library/Extensions/IODVDStorageFamily.kext /System/Library/Extensions/IODVDStorageFamily.kexta'
 alias superdrive='mv /System/Library/Extensions/IODVDStorageFamily.kexta /System/Library/Extensions/IODVDStorageFamily.kext'
