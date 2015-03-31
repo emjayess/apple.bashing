@@ -32,6 +32,11 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# resty (`brew home resty` for more info)
+if [ -f /usr/local/bin/resty ]; then
+  . /usr/local/bin/resty
+fi
+
 echo Welcome to apple.bashing \:\) your shell is $SHELL
 
 function parse_git_branch {
