@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+# original sources:
+#  > ~/.osx — https://mths.be/osx
+#  > http://osxnotes.net/defaults.html
+#  > https://github.com/kevinSuttle/OSXDefaults
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Restart automatically if the computer freezes
+#sudo systemsetup -setrestartfreeze on
+
+# Disable the sound effects on boot
+#sudo nvram SystemAudioVolume=" "
+
+# Disable Notification Center and remove the menu bar icon
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
+# Disable smart quotes as they’re annoying when typing code
+#defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+#defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+###############################################################################
+# Finder #
+###############################################################################
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
+# Finder: show hidden files by default
+#defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+###############################################################################
+# SSD-specific tweaks #
+###############################################################################
+# Disable local Time Machine snapshots
+#sudo tmutil disablelocal
+
+# Disable hibernation (speeds up entering sleep mode)
+#sudo pmset -a hibernatemode 0
+
+# Remove the sleep image file to save disk space
+#sudo rm /Private/var/vm/sleepimage
+# Create a zero-byte file instead...
+#sudo touch /Private/var/vm/sleepimage
+# ...and make sure it can’t be rewritten
+#sudo chflags uchg /Private/var/vm/sleepimage
+
+# Disable the sudden motion sensor as it’s not useful for SSDs
+sudo pmset -a sms 0
+
+###############################################################################
+# Bluetooth tweaks #
+###############################################################################
+# Increase sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+###############################################################################
+# Fonts & smoothing #
+###############################################################################
+# use a lighter text rendering style
+defaults write -g AppleFontSmoothing -int 1
+
+# Enable subpixel font rendering on non-Apple LCDs
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
